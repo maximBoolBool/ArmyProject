@@ -1,4 +1,5 @@
-﻿namespace ArmyProjectSecondTry.Models.UnitsCategories;
+﻿using ArmyProjectSecondTry.Models.Units;
+namespace ArmyProjectSecondTry.Models.UnitsCategories;
 
 public class UnitCategorie
 {
@@ -9,4 +10,5 @@ public class UnitCategorie
     public int? Limit { get; set; }
         
     public Fraction Fraction { get; set; }
+    public List<BaseUnit> Units { get; set; }
 }

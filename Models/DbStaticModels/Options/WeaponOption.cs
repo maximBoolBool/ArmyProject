@@ -4,6 +4,5 @@ namespace ArmyProjectSecondTry.Models.Options;
 
 public class WeaponOption : BaseOption
 {
-    
     public List<BaseWeapon> Weapons { get; set; }
 }

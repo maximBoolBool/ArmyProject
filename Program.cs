@@ -1,6 +1,3 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using ArmyProjectSecondTry.Context;
 
-app.MapGet("/", () => "Hello World!");
-
-app.Run();
+ApplicationContext db = new ApplicationContext();

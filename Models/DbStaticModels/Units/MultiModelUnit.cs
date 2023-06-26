@@ -2,5 +2,6 @@
 
 public class MultiModelUnit : BaseUnit
 {
-    
+    public int CoastPerAditionalModel { get; set; }
+
 }

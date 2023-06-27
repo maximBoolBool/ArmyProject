@@ -2,7 +2,7 @@
 
 namespace ArmyProjectSecond.Models.Armours;
 
-public class Armoure
+public class Armour
 {
     public int Id { get; set; }
     public string Name { get; set; }

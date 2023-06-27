@@ -1,6 +1,6 @@
 ﻿namespace ArmyProjectSecond.Models.DbStaticModels.Units;
 
-public class Character
+public class Character : BaseUnit
 {
     
 }

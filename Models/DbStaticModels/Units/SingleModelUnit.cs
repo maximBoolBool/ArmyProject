@@ -1,6 +1,6 @@
 ﻿namespace ArmyProjectSecond.Models.DbStaticModels.Units;
 
-public class MultiModelUnit
+public class SingleModelUnit
 {
     
 }

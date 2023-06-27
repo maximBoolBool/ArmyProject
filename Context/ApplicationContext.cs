@@ -1,4 +1,5 @@
 ﻿using ArmyProjectSecond.Models.Armours;
+using ArmyProjectSecond.Models.DbStaticModels.MagicItems;
 using ArmyProjectSecond.Models.DbStaticModels.ManyToMany;
 using ArmyProjectSecond.Models.DbStaticModels.Option;
 using ArmyProjectSecond.Models.DbStaticModels.Units;
@@ -20,7 +21,14 @@ public class ApplicationContext : DbContext
     public DbSet<ArmourToOption> ArmourToOptions { get; set; } = null!;
     public DbSet<CloseCombatWeaponToOption> CloseCombatWeaponToOptions { get; set; } = null!;
     public DbSet<RangeWeaponToOption> RangeWeaponToOptions { get; set; } = null!;
+    public DbSet<CloseCombatWeaponToMagicUpgrade> CloseCombatWeaponToMagicUpgrades { get; set; } = null!;
+    public DbSet<RangeWeaponToMagicUpgade> RangeWeaponToMagicUpgades { get; set; } = null!;
+    public DbSet<ArmourToMagicUpgrade> ArmourToMagicUpgrades { get; set; } = null!;
+    public DbSet<MountOption> MountOptions { get; set; } = null!;
 
+    public DbSet<MagicArmour> MagicArmours { get; set; }
+    public DbSet<MagicWeaponUpgrade> MagicWeaponUpgrades { get; set; }
+    
     public ApplicationContext()
     {
         Database.EnsureDeleted();
@@ -54,49 +62,24 @@ public class ApplicationContext : DbContext
             .HasMany(eqOpt => eqOpt.Armours)
             .WithMany(armour => armour.Options)
             .UsingEntity<ArmourToOption>(j => j.ToTable("ArmourToOptions"));
+
+        modelBuilder.Entity<CloseCombatWeapon>()
+            .HasMany(closeCombatWeapon => closeCombatWeapon.MagicUpgrades)
+            .WithMany(upgrade => upgrade.CloseCombatWeapons)
+            .UsingEntity<CloseCombatWeaponToMagicUpgrade>(t => t.ToTable("CloseCombatWeaponToMagicUpgrades"));
+
+        modelBuilder.Entity<RangeWeapon>()
+            .HasMany(rangeWeapon => rangeWeapon.MagicWeaponUpgrades)
+            .WithMany(magicWeaponUpgrades => magicWeaponUpgrades.RangeWeapons)
+            .UsingEntity<RangeWeaponToMagicUpgade>(t => t.ToTable("RangeWeaponToMagicUpgades"));
+
+        modelBuilder.Entity<Armour>()
+            .HasMany(armour => armour.MagicUpgrades)
+            .WithMany(magicArmour => magicArmour.Armours)
+            .UsingEntity<ArmourToMagicUpgrade>(t => t.ToTable("ArmourToMagicUpgrades"));
     }
     private void StartValues(ModelBuilder modelBuilder)
     {
-        MultiModelUnit heavyInfantry = new() {
-            Id = 1,
-            Name = "Heavy Infantry",
-            StartPointCoast = 140,
-        };
-        CloseCombatWeapon halebard = new() {
-            Id = 1,
-            Name = "Halebard",
-            Description = "Halebard Description",
-        };
-        CloseCombatWeapon spear = new() {
-            Id = 2,
-            Name = "spear",
-            Description = "Spear Description"
-        };
-        EqupmentOption option = new() {
-            Id = 1,
-            UnitId = 1,
-            OptionCoast = 1,
-        };
-        EqupmentOption spearOption = new() {
-            Id = 2,
-            UnitId = 1,
-            OptionCoast = 1,
-        };
-        CloseCombatWeaponToOption ccWto = new() {
-            CloseCombatWeaponId = 1,
-            EqupmentOptionId = 1,
-        };
-        CloseCombatWeaponToOption ccWto2 = new() {
-            CloseCombatWeaponId = 2,
-            EqupmentOptionId = 2,
-        };
-
-
         
-        
-        modelBuilder.Entity<MultiModelUnit>().HasData(heavyInfantry);
-        modelBuilder.Entity<EqupmentOption>().HasData(option , spearOption);
-        modelBuilder.Entity<CloseCombatWeapon>().HasData(halebard , spear);
-        modelBuilder.Entity<CloseCombatWeaponToOption>().HasData(ccWto , ccWto2);
     }
 }

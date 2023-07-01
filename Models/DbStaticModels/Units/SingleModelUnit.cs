@@ -1,6 +1,6 @@
 ﻿namespace ArmyProjectSecond.Models.DbStaticModels.Units;
 
-public class SingleModelUnit
+public class SingleModelUnit : BaseUnit
 {
     
 }

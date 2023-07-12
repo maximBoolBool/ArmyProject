@@ -1,6 +1,9 @@
-﻿namespace ArmyProjectSecond.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
 
-public class UserController
+namespace ArmyProjectSecond.Controllers;
+
+[Route("UserController")]
+public class UserController : Controller
 {
     
 }

@@ -5,7 +5,30 @@
     <projectFile profileName="IIS Express">ArmyProjectSecond.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cfff01-f4a7-4b3d-92e0-09450ac98ae4" name="Changes" comment="" />
+    <list default="true" id="47cfff01-f4a7-4b3d-92e0-09450ac98ae4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.ArmyProjectSecond/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.ArmyProjectSecond/.idea/efCoreCommonOptions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.ArmyProjectSecond/.idea/efCoreDialogsState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.ArmyProjectSecond/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.ArmyProjectSecond/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ModelController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/UserController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20230711205908_Initial.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20230711205908_Initial.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20230711212113_AddStartValues.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20230711212113_AddStartValues.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/ApplicationContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/ModelsServices/IModelService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/UserServices/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ArmyProjectSecond/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArmyProjectSecond/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArmyProjectSecond.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ArmyProjectSecond.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Context/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Context/ApplicationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DbActiveModels/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DbActiveModels/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DbStaticModels/MagicItems/MagicBanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DbStaticModels/MagicItems/MagicBanner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DbStaticModels/Units/MultiModelUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DbStaticModels/Units/MultiModelUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,12 +42,16 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Context/ApplicationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Context/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/DbStaticModels/Weapon/sdf.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectId" id="2RWYSehmltTAHZZsKNw1i9wKQiH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -113,7 +140,7 @@
       <workItem from="1688984375168" duration="110000" />
       <workItem from="1689109097709" duration="3058000" />
       <workItem from="1689146012632" duration="853000" />
-      <workItem from="1689146881893" duration="392000" />
+      <workItem from="1689146881893" duration="1064000" />
     </task>
     <servers />
   </component>
@@ -133,7 +160,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="tests" />
                       </list>
                     </value>
                   </entry>

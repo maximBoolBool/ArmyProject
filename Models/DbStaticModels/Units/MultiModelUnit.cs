@@ -7,4 +7,6 @@ public class MultiModelUnit : BaseUnit
     public int PointCostPerAdditionalFigure { get; set; }
     public int StartUnitSize { get; set; }
     public int MaxUnitSize { get; set; }
+    
+    public List<CommandGroupOption> UnitCommandGroupOptions { get; set; }
 }

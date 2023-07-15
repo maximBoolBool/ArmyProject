@@ -65,6 +65,8 @@ public class ApplicationContext : DbContext
         AddOptionsToWeaponConnection(modelBuilder);
         WeaponToMagicWeaponManyToManyConnection(modelBuilder);
         AddArmourToMagicUpgrades(modelBuilder);
+        AddCommandGroupOptions(modelBuilder);
+        AddCommandGroupOptionsToUnitsConnection(modelBuilder);
     }
     private void CreateManyToManyConnection(ModelBuilder modelBuilder)
     {
@@ -98,10 +100,10 @@ public class ApplicationContext : DbContext
             .WithMany(magicArmour => magicArmour.Armours)
             .UsingEntity<ArmourToMagicUpgrade>(t => t.ToTable("ArmourToMagicUpgrades"));
 
-        modelBuilder.Entity<CommandGroupUpgradeOption>()
-            .HasMany(commandGroupUpgradeOption => commandGroupUpgradeOption.Units)
-            .WithMany(unit => unit.CommandGroupUpgradeOptions )
-            .UsingEntity<CommandGroupOptionToUnit>(t => t.ToTable("CommandGroupOptionToUnits"));
+        modelBuilder.Entity<MultiModelUnit>()
+            .HasMany(unit => unit.UnitCommandGroupOptions)
+            .WithMany(option => option.Units)
+            .UsingEntity<UnitsToCommandGroupOptions>(t => t.ToTable("UnitsToCommandGroupOptions"));
     }
     private void AddFraction(ModelBuilder modelBuilder)
     {
@@ -1270,33 +1272,176 @@ public class ApplicationContext : DbContext
                 new()
                 {
                     ArmourId = 4,
-                    MagicArmourId = 3,
+                    MagicArmourId = 4,
                 }
             });
     }
 
-    private void AddCommandgroupUpgradeOptions(ModelBuilder modelBuilder)
+    private void AddCommandGroupOptions(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<CommandGroupUpgradeOption>()
-            .HasData(new List<CommandGroupUpgradeOption>()
+        modelBuilder.Entity<CommandGroupOption>()
+            .HasData(new List<CommandGroupOption>()
             {
                 new()
                 {
                     Id = 1,
-                    UpgradeName = "Champion",
-                    UpgradeCoast = 10,
+                    Name = "Champion",
+                    OptionPointCoast = 10,
                 },
                 new()
                 {
                     Id = 2,
-                    UpgradeName = "Musician",
-                    UpgradeCoast = 10
+                    Name = "Musician",
+                    OptionPointCoast = 10
                 },
                 new()
                 {
                     Id = 3,
-                    UpgradeName = "Standart Bearer",
-                    UpgradeCoast = 10,
+                    Name = "Standart Bearer",
+                    OptionPointCoast = 10
+                },
+            });
+    }
+
+    private void AddCommandGroupOptionsToUnitsConnection(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<UnitsToCommandGroupOptions>()
+            .HasData(new List<UnitsToCommandGroupOptions>()
+            {
+                //Heavy infantry
+                new()
+                {
+                    UnitsId = 7,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 7,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                new()
+                {
+                    UnitsId = 7,
+                    UnitCommandGroupOptionsId = 3,
+                },
+                //Light infantry
+                new()
+                {
+                    UnitsId = 8,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 8,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                new()
+                {
+                    UnitsId = 8,
+                    UnitCommandGroupOptionsId = 3,
+                },
+                //milita
+                new()
+                {
+                    UnitsId = 9,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 9,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                new()
+                {
+                    UnitsId = 9,
+                    UnitCommandGroupOptionsId = 3,
+                },
+                //Electoral Cavalry
+                new()
+                {
+                    UnitsId = 10,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 10,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                new()
+                {
+                    UnitsId = 10,
+                    UnitCommandGroupOptionsId = 3,
+                },
+                //Knightly Orders
+                new()
+                {
+                    UnitsId = 11,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 11,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                new()
+                {
+                    UnitsId = 11,
+                    UnitCommandGroupOptionsId = 3,
+                },
+                //Imperial Guard
+                new()
+                {
+                    UnitsId = 12,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 12,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                new()
+                {
+                    UnitsId = 12,
+                    UnitCommandGroupOptionsId = 3,
+                },
+                //Knights of the Sun Griffon
+                new()
+                {
+                    UnitsId = 13,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 13,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                new()
+                {
+                    UnitsId = 13,
+                    UnitCommandGroupOptionsId = 3,
+                },
+                //Imperial Rangers
+                new()
+                {
+                    UnitsId = 15,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                //Reiters
+                new()
+                {
+                    UnitsId = 16,
+                    UnitCommandGroupOptionsId = 1,
+                },
+                new()
+                {
+                    UnitsId = 16,
+                    UnitCommandGroupOptionsId = 2,
+                },
+                //Flagellants
+                new()
+                {
+                    UnitsId = 18,
+                    UnitCommandGroupOptionsId = 1
                 }
             });
     }

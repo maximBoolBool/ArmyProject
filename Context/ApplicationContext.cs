@@ -22,7 +22,6 @@ public class ApplicationContext : DbContext
     public DbSet<Armour> Armours { get; set; } = null!;
     public DbSet<CloseCombatWeapon> CloseCombatWeapons { get; set; } = null!;
     public DbSet<EqupmentOption> WeaponOptions { get; set; } = null!;
-    public DbSet<CommandGroupUpgradeOption> CommandGroupUpgradeOptions { get; set; } = null!;
         
     public DbSet<ArmourToOption> ArmourToOptions { get; set; } = null!;
     public DbSet<CloseCombatWeaponToOption> CloseCombatWeaponToOptions { get; set; } = null!;
@@ -30,7 +29,7 @@ public class ApplicationContext : DbContext
     public DbSet<CloseCombatWeaponToMagicUpgrade> CloseCombatWeaponToMagicUpgrades { get; set; } = null!;
     public DbSet<RangeWeaponToMagicUpgade> RangeWeaponToMagicUpgades { get; set; } = null!;
     public DbSet<ArmourToMagicUpgrade> ArmourToMagicUpgrades { get; set; } = null!;
-    public DbSet<CommandGroupOptionToUnit> CommandGroupOptionToUnits { get; set; } = null!;
+
     public DbSet<MountOption> MountOptions { get; set; } = null!;
     public DbSet<MagicArmour> MagicArmours { get; set; } = null!;
     public DbSet<MagicWeaponUpgrade> MagicWeaponUpgrades { get; set; } = null!;
